@@ -4,7 +4,7 @@ import { ApplicationViews } from './ApplicationViews'
 import { NavBar } from './nav/NavBar'
 import { Login } from './auth/Login'
 import { Register } from './auth/Register'
-import './GamerRater.css'
+// import './GamerRater.css'
 
 export const GamerRater = () => (
     <>
@@ -21,4 +21,4 @@ export const GamerRater = () => (
         <Route path="/login" render={Login} />
         <Route path="/register" render={Register} />
     </>
-   )
+    )
