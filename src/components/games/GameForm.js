@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom'
 
 export const GameForm = () => {
     const history = useHistory()
-    const { createGame, getCategories, gameCategories, updateGame, getGamebyId } = useContext(GameContext)
+    const { createGame, updateGame, getGameById } = useContext(GameContext)
 
     const { gameId } = useParams()
 
@@ -21,9 +21,9 @@ export const GameForm = () => {
     })
 
     useEffect(() => {
-        getCategories()
+        // getCategories()
         if (gameId) {
-            getGamebyId(gameId)
+            getGameById(gameId)
                 .then(res => {
                     setCurrentGame({
                         title: res.title,
