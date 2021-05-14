@@ -58,7 +58,7 @@ export const GameProvider = (props) => {
             }
         })
         .then(response => response.json()
-        .then(setTypes))
+        .then(setCategories))
     }
 
     return (

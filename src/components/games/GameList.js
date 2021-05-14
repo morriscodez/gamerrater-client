@@ -3,11 +3,15 @@ import { useHistory } from "react-router"
 import { GameContext } from "./GameProvider.js"
 
 export const GameList = (props) => {
-    const { games, getGames } = useContext(GameContext)
+    const { games, getGames, categories, getCategories } = useContext(GameContext)
+
 
     useEffect(() => {
         getGames()
     }, [])
+    useEffect(() => {
+        console.log(games)
+    }, [games])
 
     const history = useHistory()
 
@@ -28,7 +32,14 @@ export const GameList = (props) => {
                         </div>
                         <div className="game__title">{game.title}</div>
                         <div className="game__players">{game.number_of_players} players needed</div>
-                        <div className="game__skillLevel">Skill level is{game.skill_level}</div>
+                        <div className="game__description">{game.description}</div>
+                        <div className="game__designer">{game.designer}</div>
+                        <div className="game__duration">{game.duration}</div>
+                        <div className="game__release">Released: {game.release}</div>
+                        <div className="game__categories">Categories: &nbsp; {
+                                game.categories.map(gc => gc.label).join(", ")
+                            }
+                        </div>
                     </section>
                 })
             }

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "./Auth.css"
+import "./auth.css"
 
 
 export const Login = props => {
@@ -15,7 +15,7 @@ export const Login = props => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                // "Accept": "application/json"
             },
             body: JSON.stringify({
                 username: email.current.value,
