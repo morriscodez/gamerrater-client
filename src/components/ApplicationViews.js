@@ -1,5 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { GameProvider } from "./games/GameProvider"
+import { GameList } from "./games/GameList"
 
 export const ApplicationViews = () => {
     return  <>
@@ -8,9 +10,12 @@ export const ApplicationViews = () => {
                     backgroundColor: "lightgoldenrodyellow",
                     lineHeight: "1.75rem"
                 }}>
-                    {/* <Route exact path='/'>
+                    <GameProvider>
+                        <Route exact path='/'>
+                            <GameList />
+                        </Route>
 
-                    </Route> */}
+                    </GameProvider>
                 </main>
             </>
 }
